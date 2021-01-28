@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Biografia.Models;
 
 namespace Biografia.Data
 {
@@ -12,5 +13,6 @@ namespace Biografia.Data
             : base(options)
         {
         }
+        public DbSet<Biografia.Models.Experiencia> Experiencia { get; set; }
     }
 }
