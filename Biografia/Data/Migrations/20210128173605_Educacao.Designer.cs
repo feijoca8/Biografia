@@ -4,41 +4,22 @@ using Biografia.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Biografia.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210128173605_Educacao")]
+    partial class Educacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Biografia.Models.Competencias", b =>
-                {
-                    b.Property<int>("CompetenciasId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Comunicacao")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LinguaExtrangeira")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LinguaMaterna")
-                        .HasColumnType("int");
-
-                    b.HasKey("CompetenciasId");
-
-                    b.ToTable("Competencias");
-                });
 
             modelBuilder.Entity("Biografia.Models.Educacao", b =>
                 {
@@ -74,24 +55,6 @@ namespace Biografia.Data.Migrations
                     b.HasKey("ExperienciaId");
 
                     b.ToTable("Experiencia");
-                });
-
-            modelBuilder.Entity("Biografia.Models.Treino", b =>
-                {
-                    b.Property<int>("TreinoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Duracao")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Historia")
-                        .HasColumnType("int");
-
-                    b.HasKey("TreinoId");
-
-                    b.ToTable("Treino");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

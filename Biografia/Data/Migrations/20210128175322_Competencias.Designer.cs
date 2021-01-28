@@ -4,14 +4,16 @@ using Biografia.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Biografia.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210128175322_Competencias")]
+    partial class Competencias
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,24 +76,6 @@ namespace Biografia.Data.Migrations
                     b.HasKey("ExperienciaId");
 
                     b.ToTable("Experiencia");
-                });
-
-            modelBuilder.Entity("Biografia.Models.Treino", b =>
-                {
-                    b.Property<int>("TreinoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Duracao")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Historia")
-                        .HasColumnType("int");
-
-                    b.HasKey("TreinoId");
-
-                    b.ToTable("Treino");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
