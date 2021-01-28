@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biografia.Controllers
 {
-    public class HomeController1 : Controller
+    public class ExperienciaProfissional : Controller
     {
         public IActionResult Index()
         {

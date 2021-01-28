@@ -1,0 +1,162 @@
+.imgserra {
+    background-image: url("../img/serra.png");
+    background-repeat: repeat-x;
+    background-position-y: bottom;
+}
+
+.text-primary {
+    color: darkred !important;
+}
+
+.btn-primary {
+    background-color: black !important;
+}
+
+.btn-secondary {
+    background-color: #c8c0c0 !important;
+}
+
+/** {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #ccc;
+    margin: 10px;
+}*/
+
+/* Style the header */
+/*header {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: darkred;
+}*/
+
+/* Container for flexboxes */
+/*section {
+    display: -webkit-flex;
+    display: flex;
+}*/
+
+/* Style the navigation menu */
+/*nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #ccc;
+    padding: 10px;
+    background-color: moccasin;
+}*/
+
+    /* Style the list inside the menu */
+    /*nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+
+    nav a {
+        text-decoration: none;
+        color: darkred;
+        border: 1px solid darkred;
+        background-color: #cfc3c3;
+        padding: 7px;
+        display: block;
+        text-align: center;
+    }
+
+        nav a:hover {
+            background-color: #808080;
+            color: white;
+        }
+
+        nav a:active {
+            font-weight: bold;
+        }*/
+
+
+/* Style the content */
+/*article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: #f1f1f1;
+    padding: 10px;
+}*/
+
+/* Style the footer */
+/*footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}*/
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+/*@media (max-width: 600px) {
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+header {
+    background-image: url("../img/logotipo_ipg.jpg");
+    background-repeat: no-repeat;
+    background-position: left -10px;
+}
+
+#conteudo {
+    background-image: url("../img/logotipo_ipg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+article {
+    padding: 40px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 3em;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.rasurado {
+    text-decoration: underline;
+}
+
+ul.ipg li {
+    list-style-image: url("../img/bullet_ipg.png");
+    list-style-position: inside;
+}
+
+.botaoAzul {
+    font-family: arial;
+    color: #14396A !important;
+    font-size: 14px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid #3866A3;
+    background: #63B8EE;
+    background: linear-gradient(to top, #63B8EE, #468CCF);
+}
+
+    .botaoAzul:hover {
+        color: #14396A !important;
+        background: #468CCF;
+        background: linear-gradient(to top, #468CCF, #63B8EE);
+    }
+
+tbody>tr:nth-child(odd) {
+    background-color: darkred;
+    color: white;
+}*/
