@@ -9,10 +9,10 @@ namespace Biografia.Models
     {
         public int CompetenciasId { get; set; }
 
-        public int LinguaMaterna { get; set; }
+        public string LinguaMaterna { get; set; }
 
-        public int LinguaExtrangeira { get; set; }
+        public string LinguaExtrangeira { get; set; }
 
-        public int Comunicacao { get; set; }
+        public string Comunicacao { get; set; }
     }
 }

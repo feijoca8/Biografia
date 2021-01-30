@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Biografia.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210128175322_Competencias")]
+    [Migration("20210130182110_Competencias")]
     partial class Competencias
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,14 +28,14 @@ namespace Biografia.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Comunicacao")
-                        .HasColumnType("int");
+                    b.Property<string>("Comunicacao")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LinguaExtrangeira")
-                        .HasColumnType("int");
+                    b.Property<string>("LinguaExtrangeira")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LinguaMaterna")
-                        .HasColumnType("int");
+                    b.Property<string>("LinguaMaterna")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CompetenciasId");
 
@@ -76,6 +76,24 @@ namespace Biografia.Data.Migrations
                     b.HasKey("ExperienciaId");
 
                     b.ToTable("Experiencia");
+                });
+
+            modelBuilder.Entity("Biografia.Models.Treino", b =>
+                {
+                    b.Property<int>("TreinoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Duracao")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Historia")
+                        .HasColumnType("int");
+
+                    b.HasKey("TreinoId");
+
+                    b.ToTable("Treino");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

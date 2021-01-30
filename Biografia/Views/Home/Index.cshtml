@@ -33,10 +33,7 @@
 </head>
 
 <body>
-    <a class="btn-primary" asp-action="Index" asp-controller="CompetenciaPessoais">Acrescentar Competências</a>
-    <a class="btn-primary" asp-action="Index" asp-controller="EducacaoFormacao">Acrescentar Educação e Formação</a>
-    <a class="btn-primary" asp-action="Index" asp-controller="ExperienciaProfissional">Acrescentar Experiências Profissionais</a>
-    <a class="btn-primary" asp-action="Index" asp-controller="TreinoGR">Acrescentar informação de Treino de GR</a>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
@@ -47,10 +44,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ExperienciaProfissional.html">Experiência Profissional</a></li>
-                    <li class="nav-item"><a class="nav-link" href="EducacaoFormacao.html">Educação e Formação</a></li>
-                    <li class="nav-item"><a class="nav-link" href="CompetenciasPessoais.html">Competências Pessoais</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ctgr.html">Treino de GR</a></li>
+                    <a class="btn-dark" asp-action="Index" asp-controller="CompetenciaPessoais">Competências Pessoais</a>
+                    <a class="btn-dark" asp-action="Index" asp-controller="EducacaoFormacao">Educação e Formação</a>
+                    <a class="btn-dark" asp-action="Index" asp-controller="ExperienciaProfissional">Experiência Profissional</a>
+                    <a class="btn-dark" asp-action="Index" asp-controller="TreinoGR">Treino de GR</a>
                 </ul>
             </div>
         </div>

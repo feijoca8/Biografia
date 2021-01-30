@@ -9,8 +9,8 @@ namespace Biografia.Models
     {
         public int TreinoId { get; set; }
 
-        public int Duracao { get; set; }
+        public string Duracao { get; set; }
 
-        public int Historia { get; set; }
+        public string Historia { get; set; }
     }
 }
