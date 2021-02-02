@@ -40,6 +40,8 @@ namespace Biografia
                 options.Password.RequireLowercase = true;
                 options.Password.RequiredLength = 8;
                 options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                
 
                 //lockout
                 options.Lockout.AllowedForNewUsers = true;
