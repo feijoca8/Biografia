@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Biografia.Data;
 using Biografia.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Biografia.Controllers
 {
+    [Authorize]
     public class EducacaoFormacaoController : Controller
     {
         private readonly ApplicationDbContext _context;

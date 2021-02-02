@@ -30,8 +30,26 @@ namespace Biografia
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>{
+                //Sign in
+                options.SignIn.RequireConfirmedAccount = false;
+
+                //password
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireUppercase = true;
+
+                //lockout
+                options.Lockout.AllowedForNewUsers = true;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(8);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+
+            })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultUI();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
