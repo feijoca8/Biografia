@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<Biografia.Models.Educacao>
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
 <h1>Educação e Formação</h1>
 
@@ -13,6 +11,9 @@
     <thead>
         <tr>
             <th>
+                Fotografia
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Escolas)
             </th>
             <th>
@@ -22,20 +23,28 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Escolas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tempo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EducacaoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EducacaoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EducacaoId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+<tr>
+    @*<td>
+        @if (Educacao.Foto != null)
+        {
+
+        }
+        <img src="data:image/jpeg;base64, @Convert.ToBase64String(Educacao.Foto)" class="img-fluid" />
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Escolas)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tempo)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.EducacaoId" class="btn-warning">Editar</a> |
+        <a asp-action="Details" asp-route-id="@item.EducacaoId" class="btn-info">Detalhes</a> |
+        <a asp-action="Delete" asp-route-id="@item.EducacaoId" class="btn-danger">Eliminar</a>
+    </td>
+</tr>
+         }
     </tbody>
 </table>
