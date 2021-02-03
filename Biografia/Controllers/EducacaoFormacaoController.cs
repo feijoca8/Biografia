@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Biografia.Data;
 using Biografia.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Biografia.Controllers
 {
@@ -56,13 +58,21 @@ namespace Biografia.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EducacaoId,Escolas,Tempo")] Educacao educacao)
+        public async Task<IActionResult> Create([Bind("EducacaoId,Escolas,Tempo")] Educacao educacao, IFormFile ficheiroFoto)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(educacao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            if (ficheiroFoto != null && ficheiroFoto.Length > 0)
+            {
+                using (var ficheiroMemoria = new MemoryStream())
+                {
+                    ficheiroFoto.CopyTo(ficheiroMemoria);
+                    educacao.Foto = ficheiroMemoria.ToArray();
+                }
             }
             return View(educacao);
         }

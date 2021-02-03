@@ -12,5 +12,8 @@ namespace Biografia.Models
         public string Escolas { get; set; }
 
         public string Tempo { get; set; }
-    }
+
+        public byte[] Foto { get; set; }
+}
+    
 }
