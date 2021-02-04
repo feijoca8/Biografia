@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Biografia.Controllers
 {
-    [Authorize]
+    
     public class CompetenciaPessoaisController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -54,6 +54,7 @@ namespace Biografia.Controllers
         // POST: CompetenciaPessoais/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CompetenciasId,LinguaMaterna,LinguaExtrangeira,Comunicacao")] Competencias competencias)
@@ -86,6 +87,7 @@ namespace Biografia.Controllers
         // POST: CompetenciaPessoais/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CompetenciasId,LinguaMaterna,LinguaExtrangeira,Comunicacao")] Competencias competencias)
@@ -137,6 +139,7 @@ namespace Biografia.Controllers
         }
 
         // POST: CompetenciaPessoais/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

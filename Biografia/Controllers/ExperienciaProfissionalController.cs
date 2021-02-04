@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Biografia.Controllers
 {
-    [Authorize]
+    
     public class ExperienciaProfissionalController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -54,6 +54,7 @@ namespace Biografia.Controllers
         // POST: ExperienciaProfissional/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ExperienciaId,Empresa,Duracao")] Experiencia experiencia)
@@ -86,6 +87,7 @@ namespace Biografia.Controllers
         // POST: ExperienciaProfissional/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ExperienciaId,Empresa,Duracao")] Experiencia experiencia)
@@ -137,6 +139,7 @@ namespace Biografia.Controllers
         }
 
         // POST: ExperienciaProfissional/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
