@@ -63,14 +63,14 @@ namespace Biografia.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (ficheiroFoto != null && ficheiroFoto.Length > 0)
-                {
-                    using (var ficheiroMemoria = new MemoryStream())
-                    {
-                        ficheiroFoto.CopyTo(ficheiroMemoria);
-                        educacao.Foto = ficheiroMemoria.ToArray();
-                    }
-                }
+                //if (ficheiroFoto != null && ficheiroFoto.Length > 0)
+                //{
+                //    using (var ficheiroMemoria = new MemoryStream())
+                //    {
+                //        ficheiroFoto.CopyTo(ficheiroMemoria);
+                //        educacao.Foto = ficheiroMemoria.ToArray();
+                //    }
+                //}
                 _context.Add(educacao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
